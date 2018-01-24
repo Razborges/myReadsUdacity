@@ -24,11 +24,19 @@ class SearchBooks extends React.Component {
 
   _searchBooks = (query) => {
     BooksAPI.search(query, 20)
-      .then((books) => {
-        books.length > 0 ? 
-          this.setState({ resultBooks: books, msg: `Found ${books.length} books` })
-          :
+      .then( resultBooks => {
+        if(resultBooks.error) {
           this.setState({ resultBooks: [], msg: 'No results found! You can do a new search.' })
+        } else {
+          this.props.books.forEach(book => {
+            resultBooks.forEach(result => {
+              if(book.id === result.id){
+                result.shelf = book.shelf
+              }
+            })
+          })
+          this.setState({ resultBooks: resultBooks, msg: `Found ${resultBooks.length} books` })
+        }
       })
   }
 
