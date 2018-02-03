@@ -1,26 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import * as BooksAPI from '../BooksAPI'
-import DebounceInput from 'react-debounce-input'
-import Book from '../components/Book'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import * as BooksAPI from '../BooksAPI';
+import DebounceInput from 'react-debounce-input';
+import Book from '../components/Book';
 
 class SearchBooks extends React.Component {
   state = {
     search: '',
     resultBooks: [],
     msg: 'You must enter 3 or more characters to search.'
-  }
+  };
 
   handleSearch = (e) => {
-    const query = e.target.value
+    const query = e.target.value;
     if (query) {
       this.setState({ search: query })
       this._searchBooks(query)
     } else {
       this.setState({ resultBooks: [], msg: 'You must enter 3 or more characters to search.' })
     }
-  }
+  };
 
   _searchBooks = (query) => {
     BooksAPI.search(query, 20)
@@ -38,10 +38,10 @@ class SearchBooks extends React.Component {
           this.setState({ resultBooks: resultBooks, msg: `Found ${resultBooks.length} books` })
         }
       })
-  }
+  };
 
   render() {
-    const { resultBooks, msg } = this.state
+    const { resultBooks, msg } = this.state;
 
     return (
       <div className="search-books">
@@ -77,13 +77,13 @@ class SearchBooks extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   static proptypes = {
     books: PropTypes.array.isRequired,
     changeBook: PropTypes.func.isRequired
   }
-}
+};
 
-export default SearchBooks
+export default SearchBooks;

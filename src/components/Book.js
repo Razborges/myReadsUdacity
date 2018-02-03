@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Book = (props) => (
   <li key={props.book.id}>
@@ -22,11 +22,11 @@ const Book = (props) => (
       ))}
     </div>
   </li>
-)
+);
 
 Book.propTypes = {
   book: PropTypes.object.isRequired,
   changeBook: PropTypes.func.isRequired
-}
+};
 
-export default Book
+export default Book;

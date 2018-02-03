@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Book from './Book'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Book from './Book';
 
 const BookList = (props) => {
 
@@ -8,7 +8,7 @@ const BookList = (props) => {
     { type: 'currentlyReading', title: 'Currently Reading' },
     { type: 'wantToRead',       title: 'Want to Read' },
     { type: 'read',             title: 'Read'}
-  ]
+  ];
 
   return (
     <div className="list-books-content">
@@ -34,11 +34,11 @@ const BookList = (props) => {
       })}
     </div>
   )
-}
+};
 
 BookList.propTypes = {
   books: PropTypes.array.isRequired,
   changeBook: PropTypes.func.isRequired
-}
+};
 
-export default BookList
+export default BookList;

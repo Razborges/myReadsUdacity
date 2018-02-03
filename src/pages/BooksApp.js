@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import BookList from '../components/BookList'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import BookList from '../components/BookList';
 
 const BooksApp = (props) => (
   <div className="list-books">
@@ -15,12 +15,12 @@ const BooksApp = (props) => (
       <Link to="/search">Search</Link>
     </div>
   </div>
-)
+);
 
 BooksApp.propTypes = {
   books: PropTypes.array.isRequired,
   changeBook: PropTypes.func.isRequired
-}
+};
 
 
-export default BooksApp
+export default BooksApp;
