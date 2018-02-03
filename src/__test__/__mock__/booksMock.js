@@ -79,6 +79,10 @@ const booksMock = {
         "containsEpubBubbles": false,
         "containsImageBubbles": false
         },
+        "imageLinks": {
+        "smallThumbnail": "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
         "language": "en",
         "previewLink": "http://books.google.com/books?id=sJf1vQAACAAJ&dq=redux+react&hl=&cd=6&source=gbs_api",
         "infoLink": "http://books.google.com/books?id=sJf1vQAACAAJ&dq=redux+react&hl=&source=gbs_api",
@@ -136,4 +140,4 @@ const booksMock = {
     ]
 }
 
-export default booksMock
+export default booksMock;
