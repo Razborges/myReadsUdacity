@@ -10,16 +10,16 @@ class App extends React.Component {
     books: []
   };
 
-  componentDidMount() {
-    BooksAPI.getAll()
-      .then((books) => {this.setState({books})})
+  async componentDidMount() {
+    const books = await BooksAPI.getAll()
+    this.setState({ books })
   };
 
   moveBook = ( book, shelf ) => {
     BooksAPI.update(book, shelf)
       .then(response =>{
         book.shelf = shelf
-        let updatedBooks = this.state.books.filter( item => item.id !== book.id )
+        const updatedBooks = this.state.books.filter( item => item.id !== book.id )
         updatedBooks.push(book);
         this.setState(
           { books: updatedBooks }

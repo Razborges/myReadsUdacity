@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import BookList from '../components/BookList';
 
-const BooksApp = (props) => (
+const BooksApp = ({ books, changeBook }) => (
   <div className="list-books">
     <div className="list-books-title">
       <h1>MyReads</h1>
     </div>
 
-    <BookList books={ props.books } changeBook={ props.changeBook } />
+    <BookList books={ books } changeBook={ changeBook } />
 
     <div className="open-search">
       <Link to="/search">Search</Link>
